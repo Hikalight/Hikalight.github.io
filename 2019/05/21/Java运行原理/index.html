@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="** Java程序运行原理*Java语言是一种先编译后解释的语言，他跟c语言有所不同。            对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各">
+<meta name="description" content="Java程序运行原理####Java语言是一种先编译后解释的语言，他跟c语言有所不同。    对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各平台的JVM将字">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java运行原理">
 <meta property="og:url" content="http://yoursite.com/2019/05/21/Java运行原理/index.html">
 <meta property="og:site_name" content="海月之岛">
-<meta property="og:description" content="** Java程序运行原理*Java语言是一种先编译后解释的语言，他跟c语言有所不同。            对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各">
+<meta property="og:description" content="Java程序运行原理####Java语言是一种先编译后解释的语言，他跟c语言有所不同。    对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各平台的JVM将字">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/20/5ce2cacad5a1339731.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/20/5ce2ceeda2d8a80139.png">
-<meta property="og:updated_time" content="2019-05-20T16:07:32.303Z">
+<meta property="og:updated_time" content="2019-05-21T06:40:26.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java运行原理">
-<meta name="twitter:description" content="** Java程序运行原理*Java语言是一种先编译后解释的语言，他跟c语言有所不同。            对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各">
+<meta name="twitter:description" content="Java程序运行原理####Java语言是一种先编译后解释的语言，他跟c语言有所不同。    对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各平台的JVM将字">
 <meta name="twitter:image" content="https://i.loli.net/2019/05/20/5ce2cacad5a1339731.png">
 
 
@@ -333,9 +333,7 @@
       
 
       
-        <p>**</p>
-<h2 id="Java程序运行原理"><a href="#Java程序运行原理" class="headerlink" title="Java程序运行原理"></a>Java程序运行原理</h2><p>*<em><br>Java语言是一种先编译后解释的语言，他跟c语言有所不同。<br><img src="https://i.loli.net/2019/05/20/5ce2cacad5a1339731.png" alt="Java运行原理">
-       </em><br>    对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。<br>    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各平台的JVM将字节码用解释器翻译成特定平台的机械语言，于是便可在不同平台运行。这种解释型语言运行时需要翻译两次，效率方面便不如编译型语言。但在跨平台方面，编译型语言还是无法与之匹敌的。</p>
+        <h2 id="Java程序运行原理"><a href="#Java程序运行原理" class="headerlink" title="Java程序运行原理"></a>Java程序运行原理</h2><p>####Java语言是一种先编译后解释的语言，他跟c语言有所不同。<br><img src="https://i.loli.net/2019/05/20/5ce2cacad5a1339731.png" alt="Java运行原理"><br>    对于c语言和c++，经过编译器程序直接编译成为机器语言，机器运行时就直接使用翻译后的机器语言就ok了，这样程序翻译过程就只执行了一次，所以编译型语言的程序执行效率高。<br>    而对于Java，需要先用编译器将源程序翻译成字节码，这个字节码是全平台通用的。在不同的平台上有不同的JVM虚拟机，各平台的JVM将字节码用解释器翻译成特定平台的机械语言，于是便可在不同平台运行。这种解释型语言运行时需要翻译两次，效率方面便不如编译型语言。但在跨平台方面，编译型语言还是无法与之匹敌的。</p>
 <p><img src="https://i.loli.net/2019/05/20/5ce2ceeda2d8a80139.png" alt="Java的跨平台性"></p>
 
       
