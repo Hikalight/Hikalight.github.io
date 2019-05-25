@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="安而后能虑，虑而后能得">
+<meta name="description" content="位运算符（&amp;amp; ，~ , | , ^） ~ 为按位非 遇1则0，遇0则1。 &amp;amp; 为按位与 全1则1，否则为0。 ^ 为按位异或 相同为0，不同为1。 | 为按位或 全0则0，否则为1。例如12345678910111213141516171819202122233|211       //二进制的310       //二进制的2--------------------11">
 <meta property="og:type" content="article">
 <meta property="og:title" content="位运算符与逻辑运算符">
 <meta property="og:url" content="http://yoursite.com/2019/05/25/位运算符与逻辑运算符/index.html">
 <meta property="og:site_name" content="海月之岛">
-<meta property="og:description" content="安而后能虑，虑而后能得">
+<meta property="og:description" content="位运算符（&amp;amp; ，~ , | , ^） ~ 为按位非 遇1则0，遇0则1。 &amp;amp; 为按位与 全1则1，否则为0。 ^ 为按位异或 相同为0，不同为1。 | 为按位或 全0则0，否则为1。例如12345678910111213141516171819202122233|211       //二进制的310       //二进制的2--------------------11">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T12:12:40.123Z">
+<meta property="og:image" content="https://i.loli.net/2019/05/25/5ce9498812daf17103.png">
+<meta property="og:image" content="https://i.loli.net/2019/05/25/5ce94b7959c5044405.png">
+<meta property="og:updated_time" content="2019-05-25T14:06:10.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算符与逻辑运算符">
-<meta name="twitter:description" content="安而后能虑，虑而后能得">
+<meta name="twitter:description" content="位运算符（&amp;amp; ，~ , | , ^） ~ 为按位非 遇1则0，遇0则1。 &amp;amp; 为按位与 全1则1，否则为0。 ^ 为按位异或 相同为0，不同为1。 | 为按位或 全0则0，否则为1。例如12345678910111213141516171819202122233|211       //二进制的310       //二进制的2--------------------11">
+<meta name="twitter:image" content="https://i.loli.net/2019/05/25/5ce9498812daf17103.png">
 
 
 
@@ -302,6 +305,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java学习之道/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习之道</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  239
                 </span>
               
 
@@ -369,7 +394,22 @@
       
 
       
-        
+        <h2 id="位运算符（-amp-，-）"><a href="#位运算符（-amp-，-）" class="headerlink" title="位运算符（&amp; ，~ , | , ^）"></a>位运算符（&amp; ，~ , | , ^）</h2><ul>
+<li>~ 为按位非 遇1则0，遇0则1。</li>
+<li>&amp; 为按位与 全1则1，否则为0。</li>
+<li>^ 为按位异或 相同为0，不同为1。</li>
+<li>| 为按位或 全0则0，否则为1。<br>例如<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>|<span class="number">2</span></span><br><span class="line"><span class="number">11</span>       <span class="comment">//二进制的3</span></span><br><span class="line"><span class="number">10</span>       <span class="comment">//二进制的2</span></span><br><span class="line">--------------------</span><br><span class="line"><span class="number">11</span>       <span class="comment">//二进制的3</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>&amp;<span class="number">2</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line">---------------------</span><br><span class="line"><span class="number">10</span>       <span class="comment">//二进制的2</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>^<span class="number">2</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line">---------------------</span><br><span class="line"><span class="number">01</span>       <span class="comment">//二进制的1</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>~<span class="number">2</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line">---------------------</span><br><span class="line"><span class="number">00</span>      <span class="comment">//二进制的1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="逻辑运算符-amp-amp-、-、"><a href="#逻辑运算符-amp-amp-、-、" class="headerlink" title="逻辑运算符(&amp;&amp;、 ||、!)"></a>逻辑运算符(&amp;&amp;、 ||、!)</h2><ul>
+<li>&amp;&amp; 逻辑与</li>
+<li>|| 逻辑或</li>
+<li>!  逻辑非<br>运算规则<br><img src="https://i.loli.net/2019/05/25/5ce9498812daf17103.png" alt="运算规则"><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2></li>
+<li>逻辑运算符执行的是短路求值。当参与运算的一个操作数已经足以推断出这个表达式的值的时候，另外一个操作数就不会执行 (如果左侧的表达式能确定运算后的结果，则不再计算右侧的表达式)。  </li>
+<li>位运算符无法短路求值。</li>
+<li>逻辑运算符只能对布尔值运算，位运算符可以还可以对数值进行逻辑运算。<br><img src="https://i.loli.net/2019/05/25/5ce94b7959c5044405.png" alt="位运算和逻辑运算的区别"></li>
+</ul>
+
       
     </div>
     
@@ -379,7 +419,7 @@
       <div>
          
     <div style="text-align:center;color: #ccc;font-size:14px;">
-        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+        ------ END OF THE ARTICLE<i class="fa fa-eercast"></i>THANKS FOR READING ------</div>
     
       </div>
     
@@ -401,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/24/Java标识符详述/" rel="next" title="Java标识符详述">
-                <i class="fa fa-chevron-left"></i> Java标识符详述
+              <a href="/2019/05/25/Java基本类型详述/" rel="next" title="Java基本类型详述">
+                <i class="fa fa-chevron-left"></i> Java基本类型详述
               </a>
             
           </div>
@@ -464,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -482,7 +531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,6 +577,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符（-amp-，-）"><span class="nav-number">1.</span> <span class="nav-text">位运算符（&amp; ，~ , | , ^）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符-amp-amp-、-、"><span class="nav-number">2.</span> <span class="nav-text">逻辑运算符(&amp;&amp;、 ||、!)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">3.</span> <span class="nav-text">区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -555,7 +620,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">714</span>
+    <span title="Site words total count">1.3k</span>
   
 </div>
 
