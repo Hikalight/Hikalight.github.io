@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9ada;
+  background: #3c37c3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2997,6 +2997,10 @@ pre .javascript .function {
 }
 body {
   background: url("/images/marisa.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 .post {
   margin-top: 60px;
