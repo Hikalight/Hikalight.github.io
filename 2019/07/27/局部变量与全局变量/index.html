@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="海月之岛">
 <meta property="og:description" content="全局变量(成员变量) 全局变量即是直接在类中声明的成员变量，例如 123456789101112131415public class test&amp;#123;  static int v;// 定义int类型数据	static double w;// 定义double类型数据	static char x;// 定义char类型数据	static boolean y;// 定义boolean类型数据	s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-27T05:36:53.728Z">
+<meta property="og:updated_time" content="2019-07-27T07:18:39.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="局部变量与全局变量">
 <meta name="twitter:description" content="全局变量(成员变量) 全局变量即是直接在类中声明的成员变量，例如 123456789101112131415public class test&amp;#123;  static int v;// 定义int类型数据	static double w;// 定义double类型数据	static char x;// 定义char类型数据	static boolean y;// 定义boolean类型数据	s">
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  553
+                  663
                 </span>
               
 
@@ -404,8 +404,9 @@
 <p>####Tips</p>
 <ul>
 <li>若局部变量与全局变量名字相同，则在局部变量作用域内全局变量被隐藏</li>
-<li>若在局部变量作用域内访问该变量，则需用关键字this来引用该变量。</li>
-<li>与全局变量不同，局部变量在使用以前必须显式初始化或赋值，局部变量没有默认值。</li>
+<li>若在局部变量作用域内访问实例变量，则需用关键字this来引用该实例变量。（this不能用在静态代码或代码块中）</li>
+<li>与全局变量不同，局部变量在使用以前必须显式初始化或赋值，局部变量没有默认值。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">  System.out.println(<span class="keyword">this</span>.a);<span class="comment">//代码块中访问实例变量需要用this来引用该变量</span></span><br><span class="line">  System.out.println(test1.b);<span class="comment">//代码块中访问类变量需要类名来引用该变量</span></span><br><span class="line">  <span class="keyword">int</span> a=<span class="number">100</span>;</span><br><span class="line">  System.out.println(a);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">  System.out.println(<span class="keyword">new</span> test1().a);<span class="comment">//this不能用在静态代码或代码块中</span></span><br><span class="line">  System.out.println(test1.b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -618,7 +619,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.9k</span>
+    <span title="Site words total count">2k</span>
   
 </div>
 
