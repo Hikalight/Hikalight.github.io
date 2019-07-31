@@ -87,8 +87,7 @@
 <meta property="og:description" content="同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/31/详述Java继承/types_of_inheritance-1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/31/详述Java继承/tC4jcMA7UkAACqQu.jpeg">
-<meta property="og:updated_time" content="2019-07-31T11:37:02.415Z">
+<meta property="og:updated_time" content="2019-07-31T13:37:58.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详述Java继承">
 <meta name="twitter:description" content="同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处">
@@ -369,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  83
+                  325
                 </span>
               
 
@@ -394,7 +393,23 @@
       
 
       
-        <p>同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处<br><a id="more"></a><br>与C++不同，Java并不支持多继承，因为会导致<code>Diamond问题</code><br><img src="/2019/07/31/详述Java继承/types_of_inheritance-1.png" alt="继承"><br><img src="//yoursite.com/2019/07/31/详述Java继承/tC4jcMA7UkAACqQu.jpeg" alt="继承"></p>
+        <p>同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处<br><a id="more"></a></p>
+<h2 id="Java继承格式"><a href="#Java继承格式" class="headerlink" title="Java继承格式"></a>Java继承格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Java继承特性"><a href="#Java继承特性" class="headerlink" title="Java继承特性"></a>Java继承特性</h2><ul>
+<li>子类继承父类的属性和方法，private不可继承</li>
+<li>如果一个类没有显式继承某个类，则该类默认继承自Object类</li>
+<li>Java继承为单继承，一个子类只能继承一个父类</li>
+<li>final 不能有子类Void、String、Class、Scanner、System<br>-</li>
+</ul>
+<p>与C++不同，Java并不支持多继承，因为会导致<code>Diamond问题</code><br><img src="/2019/07/31/详述Java继承/types_of_inheritance-1.png" alt="继承"></p>
+<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><p>Java只能用super调用父类，不能调用爷类</p>
+<h2 id="implements关键字"><a href="#implements关键字" class="headerlink" title="implements关键字"></a>implements关键字</h2><p>当类继承接口时，可以使用<code>implements</code>关键字，让Java能够多继承。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">implements</span> <span class="title">A</span>,<span class="title">B</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ul>
+<li>final类不能被继承，没有子类，final类中的方法默认是final的。</li>
+<li>final方法不能被子类的方法覆盖，但可以被继承。</li>
+<li>final成员变量表示常量，只能被赋值一次，赋值后值不再改变。</li>
+<li>final不能用于修饰构造方法。</li>
+</ul>
 
       
     </div>
@@ -437,8 +452,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/31/如何安装Maven/" rel="prev" title="如何安装Maven">
-                如何安装Maven <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/31/Maven中如何创建java-Web项目/" rel="prev" title="Maven中如何创建java Web项目">
+                Maven中如何创建java Web项目 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -512,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,6 +582,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java继承格式"><span class="nav-number">1.</span> <span class="nav-text">Java继承格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java继承特性"><span class="nav-number">2.</span> <span class="nav-text">Java继承特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super关键字"><span class="nav-number">3.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implements关键字"><span class="nav-number">4.</span> <span class="nav-text">implements关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字"><span class="nav-number">5.</span> <span class="nav-text">final关键字</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -585,7 +625,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.6k</span>
+    <span title="Site words total count">2.9k</span>
   
 </div>
 
