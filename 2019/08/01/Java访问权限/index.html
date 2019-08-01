@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处">
+<meta name="description" content="Java的访问权限有四种，分别为private、public、protected，还有一种不带任何修饰符（default）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="详述Java继承">
-<meta property="og:url" content="http://yoursite.com/2019/07/31/详述Java继承/index.html">
+<meta property="og:title" content="Java访问权限">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/Java访问权限/index.html">
 <meta property="og:site_name" content="海月之岛">
-<meta property="og:description" content="同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处">
+<meta property="og:description" content="Java的访问权限有四种，分别为private、public、protected，还有一种不带任何修饰符（default）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/07/31/详述Java继承/types_of_inheritance-1.png">
-<meta property="og:updated_time" content="2019-07-31T13:37:58.378Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/02/5d43206beeefc30778.png">
+<meta property="og:updated_time" content="2019-08-01T17:33:54.253Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详述Java继承">
-<meta name="twitter:description" content="同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/31/详述Java继承/types_of_inheritance-1.png">
+<meta name="twitter:title" content="Java访问权限">
+<meta name="twitter:description" content="Java的访问权限有四种，分别为private、public、protected，还有一种不带任何修饰符（default）。">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/02/5d43206beeefc30778.png">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/31/详述Java继承/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/Java访问权限/">
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
-  <title>详述Java继承 | 海月之岛</title>
+  <title>Java访问权限 | 海月之岛</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/详述Java继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/Java访问权限/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hikalight">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">详述Java继承</h1>
+          <h1 class="post-title" itemprop="name headline">Java访问权限</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T17:15:14+08:00">
-                2019-07-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T17:19:59+08:00">
+                2019-08-01
               </time>
             
 
@@ -334,8 +334,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/31/详述Java继承/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/31/详述Java继承/" itemprop="commentCount"></span>
+                <a href="/2019/08/01/Java访问权限/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/01/Java访问权限/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2019/07/31/详述Java继承/" class="leancloud_visitors" data-flag-title="详述Java继承">
+             <span id="/2019/08/01/Java访问权限/" class="leancloud_visitors" data-flag-title="Java访问权限">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  325
+                  230
                 </span>
               
 
@@ -391,25 +391,27 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://i.loli.net/2019/08/02/5d43206beeefc30778.png" rel="gallery_cjysylcut0005g0nekk4qtv7p" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://i.loli.net/2019/08/02/5d43206beeefc30778.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <p>同C++一样，Java也有继承特性，这是面向对象编程语音的普遍特征。不同类之间的继承，可以提高代码的重用性，本文侧重于叙述Java和C++在继承方面的不同之处<br><a id="more"></a></p>
-<h2 id="Java继承格式"><a href="#Java继承格式" class="headerlink" title="Java继承格式"></a>Java继承格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Java继承特性"><a href="#Java继承特性" class="headerlink" title="Java继承特性"></a>Java继承特性</h2><ul>
-<li>子类继承父类的属性和方法，private不可继承</li>
-<li>如果一个类没有显式继承某个类，则该类默认继承自Object类</li>
-<li>Java继承为单继承，一个子类只能继承一个父类</li>
-<li>final 不能有子类Void、String、Class、Scanner、System<br>-</li>
-</ul>
-<p>与C++不同，Java并不支持多继承，因为会导致<code>Diamond问题</code><br><img src="/2019/07/31/详述Java继承/types_of_inheritance-1.png" alt="继承"></p>
-<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><p>Java只能用super调用父类，不能调用爷类</p>
-<h2 id="implements关键字"><a href="#implements关键字" class="headerlink" title="implements关键字"></a>implements关键字</h2><p>当类继承接口时，可以使用<code>implements</code>关键字，让Java能够多继承。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">implements</span> <span class="title">A</span>,<span class="title">B</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ul>
-<li>final类不能被继承，没有子类，final类中的方法默认是final的。</li>
-<li>final方法不能被子类的方法覆盖，但可以被继承。</li>
-<li>final成员变量表示常量，只能被赋值一次，赋值后值不再改变。</li>
-<li>final不能用于修饰构造方法。</li>
-</ul>
+        <p>Java的访问权限有四种，分别为private、public、protected，还有一种不带任何修饰符（default）。<br><a id="more"></a></p>
+<h2 id="private"><a href="#private" class="headerlink" title="private:"></a>private:</h2><p>私有修饰的属性或方法只准本类访问。</p>
+<h2 id="default："><a href="#default：" class="headerlink" title="default："></a>default：</h2><p>默认访问权限只允许在同一个包内进行访问，故又称“包访问权限”。</p>
+<h2 id="protected"><a href="#protected" class="headerlink" title="protected:"></a>protected:</h2><p>如果不同包的类继承了另一个包的类，对于其protected修饰的方法或属性，如果protected修饰的属性和方法均为非静态的，则只能通过子类实例化对象调用其继承过来的属性和方法，而不能使用父类实例化的对象去调用；如果protected修饰的属性和方法均为静态的，则子类可以通过类（子类类名或父类类名）名直接调用。</p>
+<h2 id="public："><a href="#public：" class="headerlink" title="public："></a>public：</h2><p>访问权限最高，只要在同一个工程里都能访问。<br>访问控制符访问权限图表如下<br><img src="https://i.loli.net/2019/08/02/5d4320c0ec17023536.png" alt="TIM截图20190802012247.png"></p>
 
       
     </div>
@@ -442,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/地址引用与值传递/" rel="next" title="地址引用与值传递">
-                <i class="fa fa-chevron-left"></i> 地址引用与值传递
+              <a href="/2019/08/01/Java多态/" rel="next" title="Java多态">
+                <i class="fa fa-chevron-left"></i> Java多态
               </a>
             
           </div>
@@ -451,10 +453,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/31/Maven中如何创建java-Web项目/" rel="prev" title="Maven中如何创建java Web项目">
-                Maven中如何创建java Web项目 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java继承格式"><span class="nav-number">1.</span> <span class="nav-text">Java继承格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java继承特性"><span class="nav-number">2.</span> <span class="nav-text">Java继承特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super关键字"><span class="nav-number">3.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implements关键字"><span class="nav-number">4.</span> <span class="nav-text">implements关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字"><span class="nav-number">5.</span> <span class="nav-text">final关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#private"><span class="nav-number">1.</span> <span class="nav-text">private:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#default："><span class="nav-number">2.</span> <span class="nav-text">default：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#protected"><span class="nav-number">3.</span> <span class="nav-text">protected:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public："><span class="nav-number">4.</span> <span class="nav-text">public：</span></a></li></ol></div>
             
 
           </div>
