@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="海月之岛">
 <meta property="og:description" content="本文讲述String实例化对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-04T03:17:23.813Z">
+<meta property="og:updated_time" content="2019-08-06T00:38:03.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String实例化对象">
 <meta name="twitter:description" content="本文讲述String实例化对象">
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  256
+                  423
                 </span>
               
 
@@ -395,8 +395,13 @@
 <h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>Java创建对象方式有两种，一种是直接赋值，一种是用new构造方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String b=<span class="keyword">new</span> String(<span class="string">"Reimu"</span>);</span><br><span class="line">String a=<span class="string">"reimu"</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h2><p>直接赋值：对象存入常量池中;当JVM创建字符串对象前会先去常量池中找有没有一个字符串内容与当前字符串相同。若有将已有的地址赋值给变量；若无，则创建新的对象<br>new ：直接存入堆内存;每new一次就会创建一个新的对象  </p>
-<p>直接赋值和new构造方法创建的string对象就算内容一样，地址也不一样，下例<br>|          | 直接赋值 | new构造  |<br>|———-|———|———-|<br>| 直接赋值 | 相同地址 | 不同地址 |<br>| new构造 | 不同地址 | 不同地址 |</p>
+<p>直接赋值和new构造方法创建的string对象就算内容一样，地址也不一样，下例<br>| /        | 直接赋值 | new构造  |<br>|———-|——|——–|<br>| 直接赋值 | 相同地址 | 不同地址 |<br>| new构造  | 不同地址 | 不同地址 |</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Peach</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String a=<span class="keyword">new</span> String(<span class="string">"reimu"</span>);</span><br><span class="line">        String b=<span class="keyword">new</span> String(<span class="string">"reimu"</span>);</span><br><span class="line">        String c=<span class="string">"reimu"</span>;</span><br><span class="line">        String d=<span class="string">"reimu"</span>;</span><br><span class="line">        System.out.println(a==b);<span class="comment">//输出false</span></span><br><span class="line">        System.out.println(a==c);<span class="comment">//输出false</span></span><br><span class="line">        System.out.println(c==d);<span class="comment">//输出true</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="String和StringBuffer"><a href="#String和StringBuffer" class="headerlink" title="String和StringBuffer"></a>String和StringBuffer</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"Tom"</span>;<span class="comment">//内存中有一个String类型对象</span></span><br><span class="line">String name = <span class="string">"T"</span>+<span class="string">"om"</span>;<span class="comment">//+字符串连接符，"Tom"  内存中有一个String类型对象</span></span><br><span class="line">String a = <span class="string">"Tom"</span>;</span><br><span class="line">String name = <span class="keyword">new</span> String(a);<span class="comment">//内存中有两个：常量池</span></span><br><span class="line">String name=<span class="string">"t"</span>;</span><br><span class="line">name=name+<span class="string">"om"</span>;<span class="comment">//两个 ""   "Tom"</span></span><br></pre></td></tr></table></figure>
+<p>String会在执行<code>name=name+&quot;om&quot;;</code>时再创建一个内存空间，当出现下面情况时，会出现内存浪费</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String names=<span class="string">"1"</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;<span class="comment">//没执行一次就会创建一个新的对象</span></span><br><span class="line">names=names+<span class="string">"om"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以就有了<code>StringBuffer</code>来解决这个问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer names = <span class="keyword">new</span> StringBuffer(<span class="string">"1"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;<span class="comment">//自始至终只有一个StringBuffer对象</span></span><br><span class="line">names.append(<span class="string">"om"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -574,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二者区别"><span class="nav-number">2.</span> <span class="nav-text">二者区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二者区别"><span class="nav-number">2.</span> <span class="nav-text">二者区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String和StringBuffer"><span class="nav-number">3.</span> <span class="nav-text">String和StringBuffer</span></a></li></ol></div>
             
 
           </div>
@@ -608,7 +613,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.8k</span>
+    <span title="Site words total count">6k</span>
   
 </div>
 
