@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="本文讲述throw与throws以及自定义异常类型抛出 自定义异常看一个程序 123456789101112131415161718192021222324252627public class Reimu &amp;#123;    private int age;    public int getAge() &amp;#123;        return age;    &amp;#125;    public v">
+<meta name="description" content="本文讲述throw与throws以及自定义异常类型抛出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详述throw与throws">
 <meta property="og:url" content="http://yoursite.com/2019/08/07/详述throw与throws/index.html">
 <meta property="og:site_name" content="海月之岛">
-<meta property="og:description" content="本文讲述throw与throws以及自定义异常类型抛出 自定义异常看一个程序 123456789101112131415161718192021222324252627public class Reimu &amp;#123;    private int age;    public int getAge() &amp;#123;        return age;    &amp;#125;    public v">
+<meta property="og:description" content="本文讲述throw与throws以及自定义异常类型抛出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-07T09:13:45.627Z">
+<meta property="og:updated_time" content="2019-08-07T09:15:14.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详述throw与throws">
-<meta name="twitter:description" content="本文讲述throw与throws以及自定义异常类型抛出 自定义异常看一个程序 123456789101112131415161718192021222324252627public class Reimu &amp;#123;    private int age;    public int getAge() &amp;#123;        return age;    &amp;#125;    public v">
+<meta name="twitter:description" content="本文讲述throw与throws以及自定义异常类型抛出">
 
 
 
@@ -369,7 +369,7 @@
       
 
       
-        <p>本文讲述throw与throws以及自定义异常类型抛出</p>
+        <p>本文讲述throw与throws以及自定义异常类型抛出<br><a id="more"></a></p>
 <h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><p>看一个程序</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reimu</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> <span class="keyword">throws</span> NullPointerException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &gt; <span class="number">1</span> &amp;&amp; age &lt; <span class="number">20</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"超出范围"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.heaven.io.Reimu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Reimu reimu = <span class="keyword">new</span> Reimu();</span><br><span class="line">        reimu.setAge(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时固然可以抛出异常，但词不达意，抛出异常时显示异常类型为<code>NullPointerException</code>，会让人匪夷所思。故需要自定义异常。  </p>
