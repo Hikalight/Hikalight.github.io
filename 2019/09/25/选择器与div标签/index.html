@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="本文主要是对equals的底层源码的解读">
+<meta name="description" content="本文通過代碼注釋來講解div標簽和選擇器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="contains源码解读">
-<meta property="og:url" content="http://yoursite.com/2019/08/09/contains源码解读/index.html">
+<meta property="og:title" content="选择器与div标签">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/选择器与div标签/index.html">
 <meta property="og:site_name" content="海月之岛">
-<meta property="og:description" content="本文主要是对equals的底层源码的解读">
+<meta property="og:description" content="本文通過代碼注釋來講解div標簽和選擇器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-10T02:56:39.173Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/25/wFJUTuLCsZpnPkc.png">
+<meta property="og:updated_time" content="2019-09-25T13:55:48.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="contains源码解读">
-<meta name="twitter:description" content="本文主要是对equals的底层源码的解读">
+<meta name="twitter:title" content="选择器与div标签">
+<meta name="twitter:description" content="本文通過代碼注釋來講解div標簽和選擇器">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/25/wFJUTuLCsZpnPkc.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/09/contains源码解读/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/25/选择器与div标签/">
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
-  <title>contains源码解读 | 海月之岛</title>
+  <title>选择器与div标签 | 海月之岛</title>
   
 
 
@@ -262,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/contains源码解读/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/选择器与div标签/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hikalight">
@@ -279,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">contains源码解读</h1>
+          <h1 class="post-title" itemprop="name headline">选择器与div标签</h1>
         
 
         <div class="post-meta">
@@ -291,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T13:54:59+08:00">
-                2019-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T21:04:59+08:00">
+                2019-09-25
               </time>
             
 
@@ -314,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java学习之道/" itemprop="url" rel="index">
-                    <span itemprop="name">Java学习之道</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -332,8 +334,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/09/contains源码解读/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/contains源码解读/" itemprop="commentCount"></span>
+                <a href="/2019/09/25/选择器与div标签/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/25/选择器与div标签/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -341,7 +343,7 @@
 
           
           
-             <span id="/2019/08/09/contains源码解读/" class="leancloud_visitors" data-flag-title="contains源码解读">
+             <span id="/2019/09/25/选择器与div标签/" class="leancloud_visitors" data-flag-title="选择器与div标签">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -366,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  752
+                  414
                 </span>
               
 
@@ -391,20 +393,10 @@
       
 
       
-        <p>本文主要是对equals的底层源码的解读<br><a id="more"></a></p>
-<h2 id="String的contains"><a href="#String的contains" class="headerlink" title="String的contains"></a>String的contains</h2><p>如下例代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pkg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reimu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; nameList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">//JDK7.0+后，new后面的ArrayList尖括号里可以不填</span></span><br><span class="line">        nameList.add(<span class="string">"Reimu"</span>);</span><br><span class="line">        String name = <span class="string">"Reimu"</span>;</span><br><span class="line">        System.out.println(nameList.contains(name));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中对contains的调用涉及到底层代码，如下是contains底层源码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> indexOf(o) &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出，name作为参数传入<code>Object o</code>,而<code>o</code>指向<code>name</code>所指向的对象，即<code>name</code>对象为上转型对象.<code>return indexOf(o) &gt;= 0;</code>调用了下面的indexOf方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)<span class="comment">//for循环遍历nameList中每一个元素；其中size为全局变量，是this.size的缩写，意义为nameList的元素个数;</span></span><br><span class="line">            <span class="keyword">if</span> (elementData[i]==<span class="keyword">null</span>)</span><br><span class="line">                <span class="comment">//o指向的对象与将nameList中遍历出来的每个元素进行对比，对比规则elementData[i]==null</span></span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">             <span class="keyword">if</span> (o.equals(elementData[i]))</span><br><span class="line">              <span class="comment">//o指向的对象与将nameList中遍历出来的每个元素进行对比，对比规则o.equals(elementData[i])——&gt;因为o指向name变量的地址，所以执行时指向的是String类中的equals</span></span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如上，<code>indexOf</code>方法中<code>o</code>指向<code>contains</code>方法中的<code>o</code>指向的对象，即<code>indexOf</code>方法实质指向<code>name</code>对象</p>
-<h2 id="类对象的contains"><a href="#类对象的contains" class="headerlink" title="类对象的contains"></a>类对象的contains</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pkg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reimu</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    String ID;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Reimu</span><span class="params">(String ID, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ID = ID;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ArrayList&lt;Reimu&gt; nameList = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//JDK7.0+后，new后面的ArrayList尖括号里可以不填</span></span><br><span class="line">        nameList.add(<span class="keyword">new</span> Reimu(<span class="string">"001"</span>,<span class="string">"Reimu"</span>));</span><br><span class="line">        Reimu reimu=<span class="keyword">new</span> Reimu(<span class="string">"001"</span>,<span class="string">"Reimu"</span>);</span><br><span class="line">        System.out.println(nameList.contains(reimu));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中对contains的调用涉及到底层代码，如下是contains底层源码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> indexOf(o) &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出，<code>reimu</code>作为参数传入<code>Object o</code>,而<code>o</code>指向<code>reimu</code>所指向的对象，即<code>reimu</code>对象为上转型对象.<code>return indexOf(o) &gt;= 0;</code>调用了下面的indexOf方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (o == <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)<span class="comment">//for循环遍历nameList中每一个元素；其中size为全局变量，是this.size的缩写，意义为nameList的元素个数;</span></span><br><span class="line">            <span class="keyword">if</span> (elementData[i]==<span class="keyword">null</span>)</span><br><span class="line">            <span class="comment">//o指向的对象与将nameList中遍历出来的每个元素进行对比，对比规则elementData[i]==null</span></span><br><span class="line">              <span class="keyword">return</span> i;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">          <span class="keyword">if</span> (o.equals(elementData[i]))<span class="comment">//equals参数即为集合中元素</span></span><br><span class="line">          <span class="comment">//o指向的对象与将studentList中遍历出来的每个元素进行对比，对比规则为o.equals(elementData[i])。</span></span><br><span class="line">          <span class="comment">//因为o指向reimu变量的地址，所以执行时指向的是Reimu类中的equals,但由于因为Reimu没有重写Object中euqals方法，所以调用的是父类的equals。如果重写了equals方法，则调用Reimu类重写后的方法</span></span><br><span class="line">              <span class="keyword">return</span> i;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如上，<code>indexOf</code>方法中<code>o</code>指向<code>contains</code>方法中的<code>o</code>指向的对象，即<code>indexOf</code>方法实质指向<code>reimu</code>对象</p>
+        <p>本文通過代碼注釋來講解div標簽和選擇器<br><a id="more"></a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>w<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			span&#123;</span></span><br><span class="line"><span class="undefined">				color: brown;</span></span><br><span class="line"><span class="undefined">				font-family: 魂心;</span></span><br><span class="line"><span class="undefined">				font-size: xx-large;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*id选择器*/</span></span><br><span class="line"><span class="undefined">			/*id标签属性的属性值在HTML文档中必须唯一*/</span></span><br><span class="line"><span class="undefined">			#id_test&#123;</span></span><br><span class="line"><span class="undefined">				color: brown;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*class选择器*/</span></span><br><span class="line"><span class="undefined">			/*class标签属性的属性值在HTML文档中必须唯一*/</span></span><br><span class="line"><span class="undefined">			.class_test&#123;</span></span><br><span class="line"><span class="undefined">				color: brown;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*分组选择器*/</span></span><br><span class="line"><span class="undefined">			#id_test2,p&#123;</span></span><br><span class="line"><span class="undefined">				color: blueviolet;</span></span><br><span class="line"><span class="undefined">				font-family: source code pro;</span></span><br><span class="line"><span class="undefined">				font-size: xx-large;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*通配符选择器*/</span></span><br><span class="line"><span class="undefined">			/*通配符选择器匹配HTML文档中的任何HTML元素*/</span></span><br><span class="line"><span class="undefined">			*&#123;</span></span><br><span class="line"><span class="undefined">				margin:0px;</span></span><br><span class="line"><span class="undefined">				padding: 0px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*标签选择器*/</span></span><br><span class="line"><span class="undefined">			p&#123;</span></span><br><span class="line"><span class="undefined">				border: solid 1px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*后代选择器*/</span></span><br><span class="line"><span class="undefined">			/*只用于为特定的HTML子元素添加CSS样式*/</span></span><br><span class="line"><span class="undefined">			p .bu&#123;</span></span><br><span class="line"><span class="undefined">				color: wheat;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*标签选择器*/</span></span><br><span class="line"><span class="undefined">			a&#123;</span></span><br><span class="line"><span class="undefined">				text-decoration: none;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*伪类  当鼠标悬浮在元素上方时，向元素添加样式*/</span></span><br><span class="line"><span class="undefined">			a:hover&#123;</span></span><br><span class="line"><span class="undefined">				text-decoration: underline;</span></span><br><span class="line"><span class="undefined">				color: #8A2BE2;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*输入框*/</span></span><br><span class="line"><span class="undefined">			input&#123;</span></span><br><span class="line"><span class="undefined">				text-indent: 50px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*标签选择器*/</span></span><br><span class="line"><span class="undefined">			a&#123;</span></span><br><span class="line"><span class="undefined">				border:mediumvioletred 5px dotted;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*标签选择器*/</span></span><br><span class="line"><span class="undefined">			a&#123;</span></span><br><span class="line"><span class="undefined">				width: 1000px;</span></span><br><span class="line"><span class="undefined">				display: inline-block;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			.in&#123;</span></span><br><span class="line"><span class="undefined">				 width:200px ;</span></span><br><span class="line"><span class="undefined">				 height:100px;</span></span><br><span class="line"><span class="undefined">				</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			.out&#123;</span></span><br><span class="line"><span class="undefined">				border: black 1px solid;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">span</span> &gt;</span></span><br><span class="line">			魂心</span><br><span class="line">		<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"id_test2"</span>&gt;</span>spantesttest<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"class_test"</span>&gt;</span>itesttest<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">id_test2</span>&gt;</span>spanid=testtest<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>ptesttest<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--division：分区--&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"out"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span>  <span class="attr">style</span>=<span class="string">"background-color: blue; width:100px; float: left;"</span><span class="attr">class</span>=<span class="string">"in"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span>  <span class="attr">style</span>=<span class="string">" background-color: red; float: right;"</span> <span class="attr">class</span>=<span class="string">"in"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span>  " <span class="attr">class</span>=<span class="string">"in"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!--防止最外面的框缩进去--&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如圖所示</p>
+<p><img src="https://i.loli.net/2019/09/25/wFJUTuLCsZpnPkc.png" alt="image.png"></p>
 
       
     </div>
@@ -437,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/09/equals源码解读/" rel="next" title="equals源码解读">
-                <i class="fa fa-chevron-left"></i> equals源码解读
+              <a href="/2019/09/25/HTML-frame/" rel="next" title="HTML frame">
+                <i class="fa fa-chevron-left"></i> HTML frame
               </a>
             
           </div>
@@ -446,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/10/HashSet的add()方法内部源码解读/" rel="prev" title="HashSet的add()方法内部源码解读">
-                HashSet的add()方法内部源码解读 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,17 +492,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,22 +555,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String的contains"><span class="nav-number">1.</span> <span class="nav-text">String的contains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类对象的contains"><span class="nav-number">2.</span> <span class="nav-text">类对象的contains</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
